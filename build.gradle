@@ -1,12 +1,12 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.3.5' // Asegúrate de usar la versión correcta
+    id 'org.springframework.boot' version '3.3.5' 
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
 group = 'com.bncop'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17' // O la versión que estés utilizando 
+sourceCompatibility = '17'
 targetCompatibility = '17'
 
 repositories {

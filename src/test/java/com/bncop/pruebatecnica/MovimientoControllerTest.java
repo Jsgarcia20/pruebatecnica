@@ -38,7 +38,7 @@ public class MovimientoControllerTest {
 
     @Test
     public void testCrearMovimiento() {
-        Movimientos movimiento = new Movimientos(); // inicializa según sea necesario
+        Movimientos movimiento = new Movimientos();
         when(movimientoService.registrarMovimiento(any(Movimientos.class))).thenReturn(movimiento);
 
         ResponseEntity<Movimientos> response = movimientoController.crearMovimiento(movimiento);
@@ -49,7 +49,7 @@ public class MovimientoControllerTest {
 
     @Test
     public void testCrearMovimientoConSaldoInsuficiente() {
-        Movimientos movimiento = new Movimientos(); // inicializa según sea necesario
+        Movimientos movimiento = new Movimientos(); 
         when(movimientoService.registrarMovimiento(any(Movimientos.class))).thenThrow(new SaldoInsuficienteException("Saldo insuficiente"));
 
         ResponseEntity<Movimientos> response = movimientoController.crearMovimiento(movimiento);
@@ -74,7 +74,7 @@ public class MovimientoControllerTest {
     @Test
     public void testObtenerMovimientoPorId() {
         Long id = 1L;
-        Movimientos movimiento = new Movimientos(); // inicializa según sea necesario
+        Movimientos movimiento = new Movimientos();
         when(movimientoService.findById(id)).thenReturn(Optional.of(movimiento));
 
         ResponseEntity<Movimientos> response = movimientoController.obtenerMovimientoPorId(id);
@@ -95,7 +95,7 @@ public class MovimientoControllerTest {
     @Test
     public void testActualizarMovimiento() {
         Long id = 1L;
-        Movimientos movimiento = new Movimientos(); // inicializa según sea necesario
+        Movimientos movimiento = new Movimientos(); 
         when(movimientoService.update(eq(id), any(Movimientos.class))).thenReturn(Optional.of(movimiento));
 
         ResponseEntity<Movimientos> response = movimientoController.actualizarMovimiento(id, movimiento);

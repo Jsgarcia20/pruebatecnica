@@ -29,12 +29,9 @@ public class MovimientoService {
             throw new IllegalArgumentException("Cuenta no puede ser nula");
         }
         
-        // Aquí debes buscar la cuenta en la base de datos
         Cuenta cuenta = cuentaRepository.findById(movimiento.getCuenta().getid())
             .orElseThrow(() -> new IllegalArgumentException("Cuenta no encontrada"));
-        
-        // Continuar con la lógica de creación del movimiento
-        // ...
+
         return movimientoRepository.save(movimiento);
     }
   

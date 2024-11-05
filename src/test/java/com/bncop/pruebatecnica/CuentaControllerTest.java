@@ -46,7 +46,7 @@ public class CuentaControllerTest {
 
     @Test
     public void testCrearCuenta() {
-        Cuenta cuenta = new Cuenta(); // inicializa según sea necesario
+        Cuenta cuenta = new Cuenta(); 
         when(cuentaService.save(any(Cuenta.class))).thenReturn(cuenta);
 
         ResponseEntity<Cuenta> response = cuentaController.crearCuenta(cuenta);
@@ -66,7 +66,7 @@ public class CuentaControllerTest {
 
     @Test
     public void testHandleCuentaNotFound() {
-        Long id = 1L;  // Define un valor Long
+        Long id = 1L;  
         when(cuentaService.findById(any(Long.class))).thenThrow(new CuentaNotFoundException(id));
     
         ResponseEntity<String> response = cuentaController.handleCuentaNotFound(new CuentaNotFoundException(id));
